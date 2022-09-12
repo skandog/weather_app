@@ -7,6 +7,7 @@ import dummy from '../lib/dummy'
 const Page = () => {
   const [data, setdata] = useState(dummy[0])
   const [sorted, setSorted] = useState([])
+  const [fiveday, setFiveday] = useState([])
   useEffect(() => {
     async function FetchPage() {
       let response = await fetch(
@@ -50,20 +51,45 @@ const Page = () => {
       let date = dt.getDate()
       let month = months[dt.getMonth()]
       let year = dt.getFullYear()
-      let temp = main.temp
-
-      return { day: day, date: date, month: month, year: year, temp: temp }
+      let temp = Math.floor(main.temp)
+      let img = entry.weather[0].icon
+      let weather = entry.weather[0].main
+      return {
+        day: day,
+        date: date,
+        month: month,
+        year: year,
+        temp: temp,
+        img: img,
+        weather: weather
+      }
     })
     console.log('sorted :>> ', sort)
-    setSorted(sort)
+    setFiveday([sort[0], sort[7], sort[15], sort[23], sort[31]])
   }, [data])
-
+  console.log(fiveday)
   // let dt = new Date(data.list[0].dt * 1000)
   // console.log('dt.getDay() :>> ', weekday[dt.getDay()])
   return (
     <div className="site-container">
-      <h1>{data.city.name}</h1>
-      <WeatherCard />
+      <span className="info">
+        <h1 className="location">{data.city.name}</h1>
+        <h2 className="mode">Five Day Forecast</h2>
+      </span>
+      <div className="weather-container">
+        {fiveday.map(item => {
+          return (
+            <WeatherCard
+              day={item.day}
+              date={item.date}
+              img={item.img}
+              weather={item.weather}
+              temp={item.temp}
+            />
+          )
+        })}
+        {/* <WeatherCard /> */}
+      </div>
     </div>
   )
 }

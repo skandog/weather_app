@@ -1,16 +1,18 @@
-import { WiCloudyGusts } from "react-icons/wi"
+import { WiCloudyGusts } from 'react-icons/wi'
 
-const WeatherCard = ({ children }) => {
+const WeatherCard = ({ children, img, day, date, month, weather, temp }) => {
   return (
-    <div className="weather-container">
     <div className="weather-card">
-      <WiCloudyGusts className="weather-icon" />
-      <span>Monday</span>
-      <span>12 Sept</span>
-      <span>Cloudy/Gusts</span>
-      <span>24deg</span>
+      <img
+        alt="weather-symbol"
+        src={`http://openweathermap.org/img/wn/${img}@2x.png`}
+      />
+      {/* <WiCloudyGusts className="weather-icon" /> */}
+      <span>{day}</span>
+      <span>{date}</span>
+      <span>{weather}</span>
+      <span>{temp}&deg;c</span>
     </div>
-  </div>
   )
 }
 

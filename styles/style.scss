@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap");
 
 
-$primary-font-color: #466c9b;
-$background-color: #b5d2dd;
+$primary-font-color: #d19411;
+$background-color: #c0dce7;
+$weather-font-color: rgb(48, 41, 11);
 
 @mixin flexCenter($direction) {
     display: flex;
@@ -14,22 +15,39 @@ $background-color: #b5d2dd;
 body {
     background-color: $background-color;
     font-family: "Raleway", sans-serif;
+    color: $primary-font-color;
+}
+
+.info {
+    @include flexCenter(column)
+}
+
+.location {
+    text-decoration: underline;
 }
 
 .site-container {
     max-width: 90%;
-    height: 100vh;
+    height: 96vh;
     margin: 0 auto;
-    border: 3px solid #fff;
-    @include flexCenter(column)
+    // border: 3px solid #fff;
+    @include flexCenter(column);
+    justify-content:flex-start
 }
 
 .weather-container {
     @include flexCenter(row);
-    border: 3px solid #fff;
-    height: 300px;
+    // border: 3px solid #fff;
+    min-height: 300px;
     width: 100%;
     border-radius: 20px;
+    justify-content: space-evenly;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+
+    }
+
 }
 
 .weather-card {
@@ -40,6 +58,7 @@ body {
     padding: 8px;
     border-radius: 12px;
     margin: 10px 0px;
+    color: $weather-font-color;
     @include flexCenter(column);
 
 
