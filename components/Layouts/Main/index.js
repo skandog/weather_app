@@ -12,7 +12,7 @@ const Main = ({ children }) => {
 
         <title>Weather App</title>
       </Head>
-      <div className="site-container">{children}</div>
+      <div >{children}</div>
     </main>
   )
 }

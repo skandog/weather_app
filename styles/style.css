@@ -2,4 +2,44 @@
 body {
   background-color: #b5d2dd;
   font-family: "Raleway", sans-serif;
+}
+
+.site-container {
+  max-width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 3px solid #fff;
+  height: 300px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.weather-card {
+  background-color: white;
+  border: 1px solid #bacdd8;
+  height: 200px;
+  width: 100px;
+  padding: 8px;
+  border-radius: 12px;
+  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather-icon {
+  font-size: 50px;
 }/*# sourceMappingURL=style.css.map */

@@ -4,10 +4,47 @@
 $primary-font-color: #466c9b;
 $background-color: #b5d2dd;
 
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
 body {
     background-color: $background-color;
     font-family: "Raleway", sans-serif;
 }
 
+.site-container {
+    max-width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    border: 3px solid #fff;
+    @include flexCenter(column)
+}
+
+.weather-container {
+    @include flexCenter(row);
+    border: 3px solid #fff;
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.weather-card {
+    background-color: white;
+    border: 1px solid #bacdd8;
+    height: 200px;
+    width: 100px;
+    padding: 8px;
+    border-radius: 12px;
+    margin: 10px 0px;
+    @include flexCenter(column);
 
 
+}
+
+.weather-icon {
+    font-size: 50px;
+}
