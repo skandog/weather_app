@@ -1,6 +1,5 @@
-import { WiCloudyGusts } from 'react-icons/wi'
 
-const WeatherCard = ({ children, img, day, date, month, weather, temp }) => {
+const WeatherCard = ({ img, day, date, month, weather, temp }) => {
   return (
     <div className="weather-card">
       <img
@@ -9,7 +8,9 @@ const WeatherCard = ({ children, img, day, date, month, weather, temp }) => {
       />
       {/* <WiCloudyGusts className="weather-icon" /> */}
       <span>{day}</span>
-      <span>{date}</span>
+      <span>
+        {date}, {month}
+      </span>
       <span>{weather}</span>
       <span>{temp}&deg;c</span>
     </div>

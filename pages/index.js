@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
-import { WiCloudyGusts } from 'react-icons/wi'
 import WeatherCard from '../components/WeatherCard'
 
 import dummy from '../lib/dummy'
 
 const Page = () => {
   const [data, setdata] = useState(dummy[0])
-  const [sorted, setSorted] = useState([])
   const [fiveday, setFiveday] = useState([])
   useEffect(() => {
     async function FetchPage() {
@@ -67,9 +65,7 @@ const Page = () => {
     console.log('sorted :>> ', sort)
     setFiveday([sort[0], sort[7], sort[15], sort[23], sort[31]])
   }, [data])
-  console.log(fiveday)
-  // let dt = new Date(data.list[0].dt * 1000)
-  // console.log('dt.getDay() :>> ', weekday[dt.getDay()])
+
   return (
     <div className="site-container">
       <span className="info">
@@ -82,6 +78,7 @@ const Page = () => {
             <WeatherCard
               day={item.day}
               date={item.date}
+              month={item.month}
               img={item.img}
               weather={item.weather}
               temp={item.temp}

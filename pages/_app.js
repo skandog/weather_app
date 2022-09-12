@@ -1,4 +1,3 @@
-import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/Layouts/Main'
 import '../styles/style.css'
 
