@@ -26,7 +26,10 @@ _Please Note: Testing suite has not been completed yet_
 This project has been completed in around four hours as part of a frontend challenge. And a challenge it was. While main user story has been completed there is a lot I would like to do with further time (and likelty will on a separate branch). These include:
 
 - Convert day card to button which reveals detailed forecast for the day
+- switch to custom weather icons rather than pulling from api
+- Create backend to comunicate with external api
 - Complete Testing Suite
-- Further styling
+- Further styling (stretch would be to have backgorund conditional on current weather)
+- Night mode which applies depending on time
 - Animation
 - Refactor code into components for readability and reusability
