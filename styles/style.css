@@ -69,6 +69,11 @@ body {
   font-size: 50px;
 }
 
+.wrong-search-message-box {
+  width: 70%;
+  margin: 0 auto;
+}
+
 footer {
   display: flex;
   justify-content: center;
