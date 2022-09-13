@@ -6,17 +6,49 @@ import dummy from '../lib/dummy'
 const Page = () => {
   const [data, setdata] = useState(dummy[0])
   const [fiveday, setFiveday] = useState([])
+  const [search, setSearch] = useState('')
+  const [city, setCity] = useState('london')
+
+  function handleChange(e) {
+    setSearch(e.target.value)
+  }
+
+  function handleEnter(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      const inputBox = document.getElementById('inputbox')
+
+      setCity(search)
+      // 👇️ clear input field
+      inputBox.value = ''
+
+      //dev feedback only remove
+      //console.log(inputFoodBank);
+    }
+  }
+
+  function handleClick(e) {
+    e.preventDefault()
+    const inputBox = document.getElementById('inputbox')
+
+    setCity(search)
+    // window.scrollTo(0, 1500)
+
+    // 👇️ clear input field
+    inputBox.value = ''
+  }
+
   useEffect(() => {
     async function FetchPage() {
       let response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=london&appid=${process.env.NEXT_PUBLIC_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.NEXT_PUBLIC_API_KEY}&units=metric`
       )
       let json = await response.json()
       console.log(json)
       setdata(json)
     }
     FetchPage()
-  }, [])
+  }, [city])
   const weekday = [
     'Sunday',
     'Monday',
@@ -68,7 +100,7 @@ const Page = () => {
 
   return (
     <div className="site-container">
-      <span className="info">
+      <span className="header">
         <h1 className="location">{data.city.name}</h1>
         <h2 className="mode">Five Day Forecast</h2>
       </span>
@@ -85,8 +117,19 @@ const Page = () => {
             />
           )
         })}
-        {/* <WeatherCard /> */}
       </div>
+      <footer>
+        <h3>Search another location</h3>
+        <input
+          id="inputbox"
+          onChange={e => {
+            handleChange(e)
+          }}
+          onKeyPress={e => {
+            handleEnter(e)
+          }}
+        ></input>
+      </footer>
     </div>
   )
 }
