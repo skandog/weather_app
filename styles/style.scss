@@ -33,11 +33,11 @@ body {
 
 .site-container {
     max-width: 90%;
-    height: 96vh;
+    min-height: 96vh;
     margin: 0 auto;
     // border: 3px solid #fff;
     @include flexCenter(column);
-    justify-content: flex-start
+    justify-content: space-between
 }
 
 .weather-container {
@@ -50,8 +50,6 @@ body {
 
     @media (max-width: 800px) {
         flex-direction: column;
-        margin-top: 400px;
-
 
     }
 }
@@ -72,4 +70,9 @@ body {
 
 .weather-icon {
     font-size: 50px;
+}
+
+footer {
+    @include flexCenter(column);
+    margin-top: 30px;
 }
