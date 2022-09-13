@@ -18,8 +18,13 @@ body {
     color: $primary-font-color;
 }
 
-.info {
-    @include flexCenter(column)
+.header {
+    @include flexCenter(column);
+    padding: 25px;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: fit-content;
+    height: 20%;
 }
 
 .location {
@@ -32,7 +37,7 @@ body {
     margin: 0 auto;
     // border: 3px solid #fff;
     @include flexCenter(column);
-    justify-content:flex-start
+    justify-content: flex-start
 }
 
 .weather-container {
@@ -45,9 +50,10 @@ body {
 
     @media (max-width: 800px) {
         flex-direction: column;
+        margin-top: 400px;
+
 
     }
-
 }
 
 .weather-card {

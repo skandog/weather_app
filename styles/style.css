@@ -5,11 +5,18 @@ body {
   color: #d19411;
 }
 
-.info {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 25px;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 20%;
 }
 
 .location {
@@ -40,6 +47,7 @@ body {
 @media (max-width: 800px) {
   .weather-container {
     flex-direction: column;
+    margin-top: 400px;
   }
 }
 

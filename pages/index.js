@@ -68,7 +68,7 @@ const Page = () => {
 
   return (
     <div className="site-container">
-      <span className="info">
+      <span className="header">
         <h1 className="location">{data.city.name}</h1>
         <h2 className="mode">Five Day Forecast</h2>
       </span>
