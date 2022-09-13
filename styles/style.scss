@@ -72,6 +72,12 @@ body {
     font-size: 50px;
 }
 
+.wrong-search-message-box {
+    width: 70%;
+    margin: 0 auto;
+    
+}
+
 footer {
     @include flexCenter(column);
     margin-top: 30px;
