@@ -44,7 +44,9 @@ body {
     @include flexCenter(row);
     // border: 3px solid #fff;
     min-height: 300px;
-    width: 100%;
+    max-width: 95%;
+    padding: 0 30px;
+
     border-radius: 20px;
     justify-content: space-evenly;
 
@@ -75,7 +77,7 @@ body {
 .wrong-search-message-box {
     width: 70%;
     margin: 0 auto;
-    
+
 }
 
 footer {
