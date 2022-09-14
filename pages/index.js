@@ -109,7 +109,9 @@ const Page = () => {
     <div className="site-container">
       <span className="header">
         {data.message !== 'city not found' ? (
-          <h1 className="location">{data.city.name}</h1>
+          <h1 className="location">
+            {data.city.name}, {data.city.country}
+          </h1>
         ) : (
           <h1 className="location">{city}</h1>
         )}
