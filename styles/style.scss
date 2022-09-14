@@ -80,7 +80,17 @@ body {
 
 }
 
+
+
 footer {
     @include flexCenter(column);
     margin-top: 30px;
+
+    & button {
+        border-radius: 6px;
+        font-size: 20px;
+        margin-top: 20px;
+        background-color: $primary-font-color;
+
+    }
 }
