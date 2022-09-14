@@ -40,7 +40,8 @@ body {
   align-items: center;
   flex-direction: row;
   min-height: 300px;
-  width: 100%;
+  max-width: 95%;
+  padding: 0 30px;
   border-radius: 20px;
   justify-content: space-evenly;
 }
@@ -80,4 +81,10 @@ footer {
   align-items: center;
   flex-direction: column;
   margin-top: 30px;
+}
+footer button {
+  border-radius: 6px;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: #d19411;
 }/*# sourceMappingURL=style.css.map */

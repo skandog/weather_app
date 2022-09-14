@@ -32,7 +32,7 @@ const Page = () => {
   function handleClick(e) {
     e.preventDefault()
     const inputBox = document.getElementById('inputbox')
-
+    console.log('search :>> ', search)
     setCity(search)
     window.scrollTo(0, 1500)
 
@@ -150,6 +150,13 @@ const Page = () => {
             handleEnter(e)
           }}
         ></input>
+        <button
+          onClick={e => {
+            handleClick(e)
+          }}
+        >
+          Search
+        </button>
       </footer>
     </div>
   )
